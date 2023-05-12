@@ -3,10 +3,13 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const fs = require('fs');
-const port = 3003
+const port = 3000
 
 app.use(cors()); // Prevents CORS error
 
+app.get('/', function(req, res) {
+  res.redirect('/api')
+})
 app.get('/api', function(req, res) {
 
     if (req.url === '/favicon.ico') {
